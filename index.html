@@ -1,0 +1,1465 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="img/favicon.png" />
+    <link
+      href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="simplebar.css" />
+    <link rel="stylesheet" href="modal/modal.css" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Olka Shop</title>
+  </head>
+  <body>
+    <header>
+      <div class="main-menu">
+        <input id="menu__toggle" type="checkbox" />
+        <label class="menu__btn" for="menu__toggle">
+          <span></span>
+        </label>
+        <img src="img/logo.png" alt="logo" class="logo" />
+        <a class="logoText" href="#main">Olka Shop</a>
+        <ul class="menu__box">
+          <li><a class="menu__item" href="#main">Головна</a></li>
+          <li><a class="menu__item" href="#services">Сервіси</a></li>
+          <li><a class="menu__item" href="#about-us">Про нас</a></li>
+          <li><a class="menu__item contacts" href="#contacts">Контакти</a></li>
+        </ul>
+        <div class="header__cart cart" tabindex="0">
+          <div class="cart__logo">
+            <ion-icon name="basket"></ion-icon>
+            <span class="cart__quantity">0</span>
+          </div>
+          <div class="cart-content">
+            <ul class="cart-content__list" data-simplebar></ul>
+            <div class="cart-content__bottom">
+              <div class="cart-content__fullprice">
+                <span>Всього:</span>
+                <span class="fullprice">298 грн</span>
+              </div>
+              <button
+                class="cart-content__btn btn"
+                data-graph-path="modal"
+                data-graph-animation="fadeInUp"
+              >
+                Перейти в корзину
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="modal">
+      <div
+        class="modal__container order-modal"
+        role="dialog"
+        aria-modal="true"
+        data-graph-target="modal"
+      >
+        <div class="modal-content order-modal__content">
+          <div class="order-modal__close">
+            <ion-icon name="close"></ion-icon>
+          </div>
+          <div class="order-modal__top">
+            <h2 class="order-modal__title">Оформлення замовлення</h2>
+          </div>
+          <div class="order-modal__info">
+            <div class="order-modal__quantity order-modal__info-item">
+              Товарів в замовленні: <span>3 шт</span>
+            </div>
+            <div class="order-modal__summ order-modal__info-item">
+              Сума замовлення: <span>5 687 грн</span>
+            </div>
+            <div class="order-modal__products order-modal__info-item">
+              <button class="order-modal__btn">
+                Склад замовлення
+                <ion-icon class="arrow-down" name="arrow-dropdown"></ion-icon>
+              </button>
+              <ul class="order-modal__list">
+                <!-- <li class="order-modal__item">
+								<article class="order-modal__product order-product">
+									<img src="img/goods2.png" alt="" class="order-product__img">
+									<div class="order-product__text">
+										<h3 class="order-product__title">Крем для рук Eveline Coconut</h3>
+										<span class="order-product__price">823 грн</span>
+									</div>
+									<button class="order-product__delete">Видалити</button>
+								</article>
+							</li> -->
+              </ul>
+            </div>
+          </div>
+          <form action="#" class="order-modal__form order">
+            <label class="order__label">
+              <span class="order__text">ПІБ</span>
+              <input
+                type="text"
+                name="Імя"
+                class="order__input"
+                id="formName"
+              />
+            </label>
+            <label class="order__label">
+              <span class="order__text">Номер телефону</span>
+              <input
+                type="tel"
+                name="Телефон"
+                class="order__input"
+                placeholder="+380 (__)___-____"
+                id="formTel"
+              />
+            </label>
+            <!-- <label class="order__label">
+						<span class="order__text">Пошта</span>
+						<input type="email" name="Email" class="order__input" placeholder="example@gmail.com" id="formMail">
+					</label> -->
+            <label class="order__label">
+              <span class="order__text">Місто</span>
+              <input
+                type="text"
+                name="City"
+                class="order__input"
+                placeholder="Львів"
+                id="formCity"
+              />
+            </label>
+            <label class="order__label">
+              <span class="order__text">Дані доставки</span>
+              <!-- <input type="text" name="City" class="order__input" placeholder="Львів" id="formCity"> -->
+              <textarea
+                name="delivery"
+                class="order__input delivery"
+                placeholder="Відділення чи індекс пошти, коментар якщо потрібно"
+                id="formDelivery"
+              ></textarea>
+            </label>
+            <button class="order__btn btn">Оформити замовлення</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="intro" id="main">
+      <div class="intro-container">
+        <div class="intro-text">
+          <h1>Інтернет-магазин OlkaShop</h1>
+          <!-- <p>Ми прагнемо до найкращого, щоб кожен день радувати вас!</p> -->
+        </div>
+        <div class="intro-button">
+          <a href="#categoriess">Переглянути товари</a>
+        </div>
+      </div>
+    </div>
+    <section class="categories">
+      <ion-icon name="rose" id="categoriess"></ion-icon>
+      <div class="categories-wrapper">
+        <div class="categories-content">
+          <div class="tabs">
+            <div class="tabs__nav tabs-nav">
+              <ul>
+                <li class="tabs-nav__item is-active" data-tab-name="tab-1">
+                  <span>Засоби для догляду за обличчям</span>
+                </li>
+                <li class="tabs-nav__item" data-tab-name="tab-2">
+                  <span>Засоби для догляду за тілом</span>
+                </li>
+                <li class="tabs-nav__item" data-tab-name="tab-3">
+                  <span>Засоби для догляду за шкірою рук</span>
+                </li>
+                <li class="tabs-nav__item" data-tab-name="tab-4">
+                  <span>Декоративна косметика</span>
+                </li>
+                <li class="tabs-nav__item" data-tab-name="tab-5">
+                  <span>Все для волосся</span>
+                </li>
+                <li class="tabs-nav__item" data-tab-name="tab-6">
+                  <span>Засоби для депіляції</span>
+                </li>
+                <li class="tabs-nav__item" data-tab-name="tab-7">
+                  <span>Пірсинг</span>
+                </li>
+                <li class="tabs-nav__item" data-tab-name="tab-8">
+                  <span>Біжутерія</span>
+                </li>
+              </ul>
+            </div>
+            <div class="tabs__content">
+              <div class="tab is-active tab-1">
+                <section class="goods">
+                  <div class="goods-item" id="goods6">
+                    <div class="info_round">
+                      <ion-icon name="information-circle-outline"></ion-icon>
+                    </div>
+                    <div class="goods-front">
+                      <img
+                        src="img/skin_moisturizing.jpg"
+                        alt="skin_moisturizing"
+                      />
+                      <h4 class="goods-title">
+                        Сироватка зволоження і освітлення шкіри
+                      </h4>
+                      <p class="price">48 грн.</p>
+                      <p class="aviability aviable">В наявності</p>
+                      <button class="product__btn btn">В корзину</button>
+                    </div>
+                    <div class="goods-info">
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Illum, cum. Dolorem minus aut modi fuga fugit maiores
+                        magni eos quaerat officiis repellendus.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="goods-item" id="goods6">
+                    <div class="info_round">
+                      <ion-icon name="information-circle-outline"></ion-icon>
+                    </div>
+                    <div class="goods-front">
+                      <img src="img/eyes_matches_1.jpg" alt="eyes_matches" />
+                      <h4 class="goods-title">
+                        Колагенові патчі <br />
+                        під очі
+                      </h4>
+                      <p class="price">14 грн.</p>
+                      <p class="aviability aviable">В наявності</p>
+                      <button class="product__btn btn">В корзину</button>
+                    </div>
+                    <div class="goods-info">
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Illum, cum. Dolorem minus aut modi fuga fugit maiores
+                        magni eos quaerat officiis repellendus.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="goods-item" id="goods6">
+                    <div class="info_round">
+                      <ion-icon name="information-circle-outline"></ion-icon>
+                    </div>
+                    <div class="goods-front">
+                      <img src="img/lip_balms_2.jpg" alt="lip_balms" />
+                      <h4 class="goods-title">
+                        Бальзам зволожуючий <br />
+                        для губ
+                      </h4>
+                      <p class="price">30 грн.</p>
+                      <p class="aviability aviable">В наявності</p>
+                      <button class="product__btn btn">В корзину</button>
+                    </div>
+                    <div class="goods-info">
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Illum, cum.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="goods-item" id="goods6">
+                    <div class="info_round">
+                      <ion-icon name="information-circle-outline"></ion-icon>
+                    </div>
+                    <div class="goods-front">
+                      <img src="img/lip_matches_1.jpg" alt="lip_matches" />
+                      <h4 class="goods-title">
+                        Патчі з колагеном <br />
+                        для губ
+                      </h4>
+                      <p class="price">12 грн.</p>
+                      <p class="aviability aviable">В наявності</p>
+                      <button class="product__btn btn">В корзину</button>
+                    </div>
+                    <div class="goods-info">
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Illum, cum. Dolorem minus aut modi fuga fugit maiores
+                        magni eos quaerat officiis repellendus.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="goods-item" id="goods6">
+                    <div class="info_round">
+                      <ion-icon name="information-circle-outline"></ion-icon>
+                    </div>
+                    <div class="goods-front">
+                      <img src="img/lip_balms.jpg" alt="lip_balms" />
+                      <h4 class="goods-title">
+                        Бальзами для губ <br />
+                        "Farres"
+                      </h4>
+                      <p class="price">20 грн.</p>
+                      <p class="aviability aviable">В наявності</p>
+                      <button class="product__btn btn">В корзину</button>
+                    </div>
+                    <div class="goods-info">
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Illum, cum. Dolorem minus aut modi fuga fugit maiores
+                        magni eos quaerat officiis repellendus.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="goods-item" id="goods6">
+                    <div class="info_round">
+                      <ion-icon name="information-circle-outline"></ion-icon>
+                    </div>
+                    <div class="goods-front">
+                      <img src="img/facial_scrub_1.jpg" alt="facial_scrub" />
+                      <h4 class="goods-title">
+                        Скраб для обличчя з содою Baking Powder
+                      </h4>
+                      <p class="price">20 грн.</p>
+                      <p class="aviability aviable">В наявності</p>
+                      <button class="product__btn btn">В корзину</button>
+                    </div>
+                    <div class="goods-info">
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Illum, cum. Dolorem minus aut modi fuga fugit maiores
+                        magni eos quaerat officiis repellendus.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="goods-item" id="goods6">
+                    <div class="info_round">
+                      <ion-icon name="information-circle-outline"></ion-icon>
+                    </div>
+                    <div class="goods-front">
+                      <img src="img/face_mask_aloe.jpg" alt="face_mask_aloe" />
+                      <h4 class="goods-title">
+                        Маски тканинні <br />
+                        з алое
+                      </h4>
+                      <p class="price">18 грн.</p>
+                      <p class="aviability aviable">В наявності</p>
+                      <button class="product__btn btn">В корзину</button>
+                    </div>
+                    <div class="goods-info">
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Illum, cum. Dolorem minus aut modi fuga fugit maiores
+                        magni eos quaerat officiis repellendus.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="goods-item" id="goods6">
+                    <div class="info_round">
+                      <ion-icon name="information-circle-outline"></ion-icon>
+                    </div>
+                    <div class="goods-front">
+                      <img
+                        src="img/face_night_mask.jpg"
+                        alt="face_night_mask"
+                      />
+                      <h4 class="goods-title">
+                        Нічні маски <br />
+                        з колагеном
+                      </h4>
+                      <p class="price">6 грн.</p>
+                      <p class="aviability aviable">В наявності</p>
+                      <button class="product__btn btn">В корзину</button>
+                    </div>
+                    <div class="goods-info">
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Illum, cum. Dolorem minus aut modi fuga fugit maiores
+                        magni eos quaerat officiis repellendus.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="goods-item" id="goods6">
+                    <div class="info_round">
+                      <ion-icon name="information-circle-outline"></ion-icon>
+                    </div>
+                    <div class="goods-front">
+                      <img src="img/clay_face_mask.jpg" alt="clay_face_mask" />
+                      <h4 class="goods-title">Бульбашково-глиняна маска</h4>
+                      <p class="price">120 грн.</p>
+                      <p class="aviability aviable">В наявності</p>
+                      <button class="product__btn btn">В корзину</button>
+                    </div>
+                    <div class="goods-info">
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Illum, cum. Dolorem minus aut modi fuga fugit maiores
+                        magni eos quaerat officiis repellendus.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="goods-item" id="goods6">
+                    <div class="info_round">
+                      <ion-icon name="information-circle-outline"></ion-icon>
+                    </div>
+                    <div class="goods-front">
+                      <img src="img/dermask_water.jpg" alt="dermask_water" />
+                      <h4 class="goods-title">
+                        Dermask Water Вітамінно-зволожуюча маска
+                      </h4>
+                      <p class="price">65 грн.</p>
+                      <p class="aviability aviable">В наявності</p>
+                      <button class="product__btn btn">В корзину</button>
+                    </div>
+                    <div class="goods-info">
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Illum, cum. Dolorem minus aut modi fuga fugit maiores
+                        magni eos quaerat officiis repellendus.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="goods-item" id="goods6">
+                    <div class="info_round">
+                      <ion-icon name="information-circle-outline"></ion-icon>
+                    </div>
+                    <div class="goods-front">
+                      <img
+                        src="img/black_spot_stripes.jpg"
+                        alt="black_spot_stripes"
+                      />
+                      <h4 class="goods-title">
+                        Смужки від чорних цяток "Lanbena"
+                      </h4>
+                      <p class="price">12 грн.</p>
+                      <p class="aviability aviable">В наявності</p>
+                      <button class="product__btn btn">В корзину</button>
+                    </div>
+                    <div class="goods-info">
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Illum, cum. Dolorem minus aut modi fuga fugit maiores
+                        magni eos quaerat officiis repellendus.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="goods-item" id="goods6">
+                    <div class="info_round">
+                      <ion-icon name="information-circle-outline"></ion-icon>
+                    </div>
+                    <div class="goods-front">
+                      <img src="img/lip_balms_3.jpg" alt="lip_balms" />
+                      <h4 class="goods-title">
+                        Бальзами для губ в формі парасольок
+                      </h4>
+                      <p class="price">30 грн.</p>
+                      <p class="aviability aviable">В наявності</p>
+                      <button class="product__btn btn">В корзину</button>
+                    </div>
+                    <div class="goods-info">
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Illum, cum. Dolorem minus aut modi fuga fugit maiores
+                        magni eos quaerat officiis repellendus.
+                      </p>
+                    </div>
+                  </div>
+                </section>
+              </div>
+              <div class="tab tab-2">
+                <section class="goods">
+                  <div class="goods-item" id="goods1">
+                    <div class="info_round">
+                      <ion-icon name="information-circle-outline"></ion-icon>
+                    </div>
+                    <div class="goods-front">
+                      <img src="img/toothbrushes.jpg" alt="toothbrushes" />
+                      <h4 class="goods-title">
+                        Зубні щіточки <br />
+                        (комплект)
+                      </h4>
+                      <p class="price">35 грн.</p>
+                      <p class="aviability aviable">В наявності</p>
+                      <button class="product__btn btn">В корзину</button>
+                    </div>
+                    <div class="goods-info">
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Illum, cum. Dolorem minus aut modi fuga fugit maiores
+                        magni eos quaerat officiis repellendus.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="goods-item" id="goods6">
+                    <div class="info_round">
+                      <ion-icon name="information-circle-outline"></ion-icon>
+                    </div>
+                    <div class="goods-front">
+                      <img src="img/bath_bomb_1.jpg" alt="bath_bomb" />
+                      <h4 class="goods-title">
+                        Бомбочки для ванн "Рахат-лукум"
+                      </h4>
+                      <p class="price">20 грн.</p>
+                      <p class="aviability aviable">В наявності</p>
+                      <button class="product__btn btn">В корзину</button>
+                    </div>
+                    <div class="goods-info">
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Illum, cum. Dolorem minus aut modi fuga fugit maiores
+                        magni eos quaerat officiis repellendus.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="goods-item" id="goods6">
+                    <div class="info_round">
+                      <ion-icon name="information-circle-outline"></ion-icon>
+                    </div>
+                    <div class="goods-front">
+                      <img src="img/wet_wipes_1.jpg" alt="wet_wipes" />
+                      <h4 class="goods-title">
+                        Чоловічі вологі серветки антиперспіранти
+                      </h4>
+                      <p class="price">25 грн.</p>
+                      <p class="aviability aviable">В наявності</p>
+                      <button class="product__btn btn">В корзину</button>
+                    </div>
+                    <div class="goods-info">
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Illum, cum. Dolorem minus aut modi fuga fugit maiores
+                        magni eos quaerat officiis repellendus.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="goods-item" id="goods6">
+                    <div class="info_round">
+                      <ion-icon name="information-circle-outline"></ion-icon>
+                    </div>
+                    <div class="goods-front">
+                      <img src="img/wet_wipes_2.jpg" alt="wet_wipes" />
+                      <h4 class="goods-title">
+                        Жіночі вологі серветки антиперспіранти
+                      </h4>
+                      <p class="price">25 грн.</p>
+                      <p class="aviability aviable">В наявності</p>
+                      <button class="product__btn btn">В корзину</button>
+                    </div>
+                    <div class="goods-info">
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Illum, cum. Dolorem minus aut modi fuga fugit maiores
+                        magni eos quaerat officiis repellendus.
+                      </p>
+                    </div>
+                  </div>
+                </section>
+              </div>
+              <div class="tab tab-3">
+                <section class="goods">
+                  <div class="goods-item" id="goods6">
+                    <div class="info_round">
+                      <ion-icon name="information-circle-outline"></ion-icon>
+                    </div>
+                    <div class="goods-front">
+                      <img
+                        src="img/aloe_barbadensis.jpg"
+                        alt="aloe_barbadensis"
+                      />
+                      <h4 class="goods-title">
+                        Гель Aloe Barbadensis Plant Extraction
+                      </h4>
+                      <p class="price">45 грн.</p>
+                      <p class="aviability aviable">В наявності</p>
+                      <button class="product__btn btn">В корзину</button>
+                    </div>
+                    <div class="goods-info">
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Illum, cum. Dolorem minus aut modi fuga fugit maiores
+                        magni eos quaerat officiis repellendus.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="goods-item" id="goods6">
+                    <div class="info_round">
+                      <ion-icon name="information-circle-outline"></ion-icon>
+                    </div>
+                    <div class="goods-front">
+                      <img src="img/hand_cream_1.jpg" alt="hand_cream" />
+                      <h4 class="goods-title">
+                        Крем для рук "Images" з трояндою
+                      </h4>
+                      <p class="price">22 грн.</p>
+                      <p class="aviability aviable">В наявності</p>
+                      <button class="product__btn btn">В корзину</button>
+                    </div>
+                    <div class="goods-info">
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Illum, cum. Dolorem minus aut modi fuga fugit maiores
+                        magni eos quaerat officiis repellendus.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="goods-item" id="goods6">
+                    <div class="info_round">
+                      <ion-icon name="information-circle-outline"></ion-icon>
+                    </div>
+                    <div class="goods-front">
+                      <img src="img/hand_cream_2.jpg" alt="hand_cream" />
+                      <h4 class="goods-title">
+                        Крем для рук "Images" з сакурою
+                      </h4>
+                      <p class="price">22 грн.</p>
+                      <p class="aviability aviable">В наявності</p>
+                      <button class="product__btn btn">В корзину</button>
+                    </div>
+                    <div class="goods-info">
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Illum, cum. Dolorem minus aut modi fuga fugit maiores
+                        magni eos quaerat officiis repellendus.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="goods-item" id="goods6">
+                    <div class="info_round">
+                      <ion-icon name="information-circle-outline"></ion-icon>
+                    </div>
+                    <div class="goods-front">
+                      <img src="img/hand_cream_2.jpg" alt="hand_cream" />
+                      <h4 class="goods-title">
+                        Крем для рук "Images" з прополісом
+                      </h4>
+                      <p class="price">22 грн.</p>
+                      <p class="aviability aviable">В наявності</p>
+                      <button class="product__btn btn">В корзину</button>
+                    </div>
+                    <div class="goods-info">
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Illum, cum. Dolorem minus aut modi fuga fugit maiores
+                        magni eos quaerat officiis repellendus.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="goods-item" id="goods6">
+                    <div class="info_round">
+                      <ion-icon name="information-circle-outline"></ion-icon>
+                    </div>
+                    <div class="goods-front">
+                      <img src="img/hand_cream_3.jpg" alt="hand_cream" />
+                      <h4 class="goods-title">
+                        Крем для рук "Senana" з лимоном
+                      </h4>
+                      <p class="price">22 грн.</p>
+                      <p class="aviability aviable">В наявності</p>
+                      <button class="product__btn btn">В корзину</button>
+                    </div>
+                    <div class="goods-info">
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Illum, cum. Dolorem minus aut modi fuga fugit maiores
+                        magni eos quaerat officiis repellendus.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="goods-item" id="goods6">
+                    <div class="info_round">
+                      <ion-icon name="information-circle-outline"></ion-icon>
+                    </div>
+                    <div class="goods-front">
+                      <img src="img/hand_cream_4.jpg" alt="hand_cream" />
+                      <h4 class="goods-title">
+                        Крем для рук "Senana" з гранатом
+                      </h4>
+                      <p class="price">22 грн.</p>
+                      <p class="aviability aviable">В наявності</p>
+                      <button class="product__btn btn">В корзину</button>
+                    </div>
+                    <div class="goods-info">
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Illum, cum. Dolorem minus aut modi fuga fugit maiores
+                        magni eos quaerat officiis repellendus.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="goods-item" id="goods6">
+                    <div class="info_round">
+                      <ion-icon name="information-circle-outline"></ion-icon>
+                    </div>
+                    <div class="goods-front">
+                      <img src="img/hand_cream_5.jpg" alt="hand_cream" />
+                      <h4 class="goods-title">
+                        Крем для рук "One spring" з цитрусовими
+                      </h4>
+                      <p class="price">22 грн.</p>
+                      <p class="aviability aviable">В наявності</p>
+                      <button class="product__btn btn">В корзину</button>
+                    </div>
+                    <div class="goods-info">
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Illum, cum. Dolorem minus aut modi fuga fugit maiores
+                        magni eos quaerat officiis repellendus.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="goods-item" id="goods6">
+                    <div class="info_round">
+                      <ion-icon name="information-circle-outline"></ion-icon>
+                    </div>
+                    <div class="goods-front">
+                      <img src="img/hand_cream_6.jpg" alt="hand_cream" />
+                      <h4 class="goods-title">
+                        Крем для рук "One spring" з малиною
+                      </h4>
+                      <p class="price">22 грн.</p>
+                      <p class="aviability aviable">В наявності</p>
+                      <button class="product__btn btn">В корзину</button>
+                    </div>
+                    <div class="goods-info">
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Illum, cum. Dolorem minus aut modi fuga fugit maiores
+                        magni eos quaerat officiis repellendus.
+                      </p>
+                    </div>
+                  </div>
+                </section>
+              </div>
+              <div class="tab tab-4">
+                <section class="goods">
+                  <div class="goods-item" id="goods5">
+                    <div class="info_round">
+                      <ion-icon name="information-circle-outline"></ion-icon>
+                    </div>
+                    <div class="goods-front">
+                      <img src="img/fenty_beauty.jpg" alt="fenty_beauty" />
+                      <h4 class="goods-title">
+                        Туш для вій <br />
+                        Fenty Beauty
+                      </h4>
+                      <p class="price">32 грн.</p>
+                      <p class="aviability aviable">В наявності</p>
+                      <button class="product__btn btn">В корзину</button>
+                    </div>
+                    <div class="goods-info">
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Illum, cum. Dolorem minus aut modi fuga fugit maiores
+                        magni eos quaerat officiis repellendus.
+                      </p>
+                    </div>
+                  </div>
+                </section>
+              </div>
+              <div class="tab tab-5">
+                <section class="goods">
+                  <div class="goods-item" id="goods1">
+                    <div class="info_round">
+                      <ion-icon name="information-circle-outline"></ion-icon>
+                    </div>
+                    <div class="goods-front">
+                      <img src="img/chalma_hoop.jpg" alt="chalma_hoop" />
+                      <h4 class="goods-title">
+                        Шкіряні обручі <br />
+                        Чалма
+                      </h4>
+                      <p class="price">42 грн.</p>
+                      <p class="aviability aviable">В наявності</p>
+                      <button class="product__btn btn">В корзину</button>
+                    </div>
+                    <div class="goods-info">
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Illum, cum. Dolorem minus aut modi fuga fugit maiores
+                        magni eos quaerat officiis repellendus.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="goods-item" id="goods3">
+                    <div class="info_round">
+                      <ion-icon name="information-circle-outline"></ion-icon>
+                    </div>
+                    <div class="goods-front">
+                      <img src="img/hair_band_1.jpg" alt="hair_band" />
+                      <h4 class="goods-title">
+                        Тканинні резинки <br />
+                        (чорні)
+                      </h4>
+                      <p class="price">6 грн.</p>
+                      <p class="aviability aviable">В наявності</p>
+                      <button class="product__btn btn">В корзину</button>
+                    </div>
+                    <div class="goods-info">
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Illum, cum. Dolorem minus aut modi fuga fugit maiores
+                        magni eos quaerat officiis repellendus.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="goods-item" id="goods4">
+                    <div class="info_round">
+                      <ion-icon name="information-circle-outline"></ion-icon>
+                    </div>
+                    <div class="goods-front">
+                      <img src="img/hair_band_2.jpg" alt="hair_band" />
+                      <h4 class="goods-title">Тканинні резинки (кольорові)</h4>
+                      <p class="price">6 грн.</p>
+                      <p class="aviability aviable">В наявності</p>
+                      <button class="product__btn btn">В корзину</button>
+                    </div>
+                    <div class="goods-info">
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Illum, cum. Dolorem minus aut modi fuga fugit maiores
+                        magni eos quaerat officiis repellendus.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="goods-item" id="goods4">
+                    <div class="info_round">
+                      <ion-icon name="information-circle-outline"></ion-icon>
+                    </div>
+                    <div class="goods-front">
+                      <img src="img/hair_band_3.jpg" alt="hair_band" />
+                      <h4 class="goods-title">
+                        Велюрові резиночки для волосся
+                      </h4>
+                      <p class="price">13 грн.</p>
+                      <p class="aviability aviable">В наявності</p>
+                      <button class="product__btn btn">В корзину</button>
+                    </div>
+                    <div class="goods-info">
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Illum, cum. Dolorem minus aut modi fuga fugit maiores
+                        magni eos quaerat officiis repellendus.
+                      </p>
+                    </div>
+                  </div>
+                </section>
+              </div>
+              <div class="tab tab-6">
+                <section class="goods">
+                  <div class="goods-item" id="goods6">
+                    <div class="info_round">
+                      <ion-icon name="information-circle-outline"></ion-icon>
+                    </div>
+                    <div class="goods-front">
+                      <img
+                        src="img/depilation_strips.jpg"
+                        alt="depilation_strips"
+                      />
+                      <h4 class="goods-title">
+                        Смужки для депіляції <br />
+                        (100 шт)
+                      </h4>
+                      <p class="price">60 грн.</p>
+                      <p class="aviability aviable">В наявності</p>
+                      <button class="product__btn btn">В корзину</button>
+                    </div>
+                    <div class="goods-info">
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Illum, cum. Dolorem minus aut modi fuga fugit maiores
+                        magni eos quaerat officiis repellendus.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="goods-item" id="goods6">
+                    <div class="info_round">
+                      <ion-icon name="information-circle-outline"></ion-icon>
+                    </div>
+                    <div class="goods-front">
+                      <img src="img/wax_melts.jpg" alt="wax_melts" />
+                      <h4 class="goods-title">
+                        Воскоплав <br />
+                        Pro-Wax 100
+                      </h4>
+                      <p class="price">250 грн.</p>
+                      <p class="aviability aviable">В наявності</p>
+                      <button class="product__btn btn">В корзину</button>
+                    </div>
+                    <div class="goods-info">
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Illum, cum. Dolorem minus aut modi fuga fugit maiores
+                        magni eos quaerat officiis repellendus.
+                      </p>
+                    </div>
+                  </div>
+                </section>
+              </div>
+              <div class="tab tab-7">
+                <section class="goods">
+                  <div class="goods-item" id="goods6">
+                    <div class="info_round">
+                      <ion-icon name="information-circle-outline"></ion-icon>
+                    </div>
+                    <div class="goods-front">
+                      <img
+                        src="img/twister_earrings.jpg"
+                        alt="twister_earrings"
+                      />
+                      <h4 class="goods-title">Сережки твістери для пірсингу</h4>
+                      <p class="price">30 грн.</p>
+                      <p class="aviability aviable">В наявності</p>
+                      <button class="product__btn btn">В корзину</button>
+                    </div>
+                    <div class="goods-info">
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Illum, cum. Dolorem minus aut modi fuga fugit maiores
+                        magni eos quaerat officiis repellendus.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="goods-item" id="goods6">
+                    <div class="info_round">
+                      <ion-icon name="information-circle-outline"></ion-icon>
+                    </div>
+                    <div class="goods-front">
+                      <img
+                        src="img/industrial_earrings.jpg"
+                        alt="industrial_earrings"
+                      />
+                      <h4 class="goods-title">
+                        Штанга для індастріал для пірсингу (38 мм)
+                      </h4>
+                      <p class="price">40 грн.</p>
+                      <p class="aviability aviable">В наявності</p>
+                      <button class="product__btn btn">В корзину</button>
+                    </div>
+                    <div class="goods-info">
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Illum, cum. Dolorem minus aut modi fuga fugit maiores
+                        magni eos quaerat officiis repellendus.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="goods-item" id="goods6">
+                    <div class="info_round">
+                      <ion-icon name="information-circle-outline"></ion-icon>
+                    </div>
+                    <div class="goods-front">
+                      <img
+                        src="img/microbanan_earrings.jpg"
+                        alt="microbanan_earrings"
+                      />
+                      <h4 class="goods-title">
+                        Мікробанан конусний для пірсингу (38 мм)
+                      </h4>
+                      <p class="price">25 грн.</p>
+                      <p class="aviability aviable">В наявності</p>
+                      <button class="product__btn btn">В корзину</button>
+                    </div>
+                    <div class="goods-info">
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Illum, cum. Dolorem minus aut modi fuga fugit maiores
+                        magni eos quaerat officiis repellendus.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="goods-item" id="goods6">
+                    <div class="info_round">
+                      <ion-icon name="information-circle-outline"></ion-icon>
+                    </div>
+                    <div class="goods-front">
+                      <img
+                        src="img/professional_earrings.jpg"
+                        alt="professional_earrings"
+                      />
+                      <h4 class="goods-title">
+                        Сережки для професійного пірсингу
+                      </h4>
+                      <p class="price">40 грн.</p>
+                      <p class="aviability aviable">В наявності</p>
+                      <button class="product__btn btn">В корзину</button>
+                    </div>
+                    <div class="goods-info">
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Illum, cum. Dolorem minus aut modi fuga fugit maiores
+                        magni eos quaerat officiis repellendus.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="goods-item" id="goods6">
+                    <div class="info_round">
+                      <ion-icon name="information-circle-outline"></ion-icon>
+                    </div>
+                    <div class="goods-front">
+                      <img
+                        src="img/labrets_earrings.jpg"
+                        alt="labrets_earrings"
+                      />
+                      <h4 class="goods-title">Сережки лабрети для пірсингу</h4>
+                      <p class="price">40 грн.</p>
+                      <p class="aviability aviable">В наявності</p>
+                      <button class="product__btn btn">В корзину</button>
+                    </div>
+                    <div class="goods-info">
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Illum, cum. Dolorem minus aut modi fuga fugit maiores
+                        magni eos quaerat officiis repellendus.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="goods-item" id="goods6">
+                    <div class="info_round">
+                      <ion-icon name="information-circle-outline"></ion-icon>
+                    </div>
+                    <div class="goods-front">
+                      <img
+                        src="img/piercing_needles.jpg"
+                        alt="piercing_needles"
+                      />
+                      <h4 class="goods-title">
+                        Професійні голки для пірсингу (12 G)
+                      </h4>
+                      <p class="price">15 грн.</p>
+                      <p class="aviability aviable">В наявності</p>
+                      <button class="product__btn btn">В корзину</button>
+                    </div>
+                    <div class="goods-info">
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Illum, cum. Dolorem minus aut modi fuga fugit maiores
+                        magni eos quaerat officiis repellendus.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="goods-item" id="goods6">
+                    <div class="info_round">
+                      <ion-icon name="information-circle-outline"></ion-icon>
+                    </div>
+                    <div class="goods-front">
+                      <img
+                        src="img/piercing_needles.jpg"
+                        alt="piercing_needles"
+                      />
+                      <h4 class="goods-title">
+                        Професійні голки для пірсингу (13 G)
+                      </h4>
+                      <p class="price">15 грн.</p>
+                      <p class="aviability aviable">В наявності</p>
+                      <button class="product__btn btn">В корзину</button>
+                    </div>
+                    <div class="goods-info">
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Illum, cum. Dolorem minus aut modi fuga fugit maiores
+                        magni eos quaerat officiis repellendus.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="goods-item" id="goods6">
+                    <div class="info_round">
+                      <ion-icon name="information-circle-outline"></ion-icon>
+                    </div>
+                    <div class="goods-front">
+                      <img
+                        src="img/piercing_needles.jpg"
+                        alt="piercing_needles"
+                      />
+                      <h4 class="goods-title">
+                        Професійні голки для пірсингу (14 G)
+                      </h4>
+                      <p class="price">15 грн.</p>
+                      <p class="aviability aviable">В наявності</p>
+                      <button class="product__btn btn">В корзину</button>
+                    </div>
+                    <div class="goods-info">
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Illum, cum. Dolorem minus aut modi fuga fugit maiores
+                        magni eos quaerat officiis repellendus.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="goods-item" id="goods6">
+                    <div class="info_round">
+                      <ion-icon name="information-circle-outline"></ion-icon>
+                    </div>
+                    <div class="goods-front">
+                      <img
+                        src="img/piercing_needles.jpg"
+                        alt="piercing_needles"
+                      />
+                      <h4 class="goods-title">
+                        Професійні голки для пірсингу (16 G)
+                      </h4>
+                      <p class="price">15 грн.</p>
+                      <p class="aviability aviable">В наявності</p>
+                      <button class="product__btn btn">В корзину</button>
+                    </div>
+                    <div class="goods-info">
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Illum, cum. Dolorem minus aut modi fuga fugit maiores
+                        magni eos quaerat officiis repellendus.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="goods-item" id="goods6">
+                    <div class="info_round">
+                      <ion-icon name="information-circle-outline"></ion-icon>
+                    </div>
+                    <div class="goods-front">
+                      <img
+                        src="img/piercing_needles.jpg"
+                        alt="piercing_needles"
+                      />
+                      <h4 class="goods-title">
+                        Професійні голки для пірсингу (18 G)
+                      </h4>
+                      <p class="price">15 грн.</p>
+                      <p class="aviability aviable">В наявності</p>
+                      <button class="product__btn btn">В корзину</button>
+                    </div>
+                    <div class="goods-info">
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Illum, cum. Dolorem minus aut modi fuga fugit maiores
+                        magni eos quaerat officiis repellendus.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="goods-item" id="goods6">
+                    <div class="info_round">
+                      <ion-icon name="information-circle-outline"></ion-icon>
+                    </div>
+                    <div class="goods-front">
+                      <img
+                        src="img/banana_navelrings.jpg"
+                        alt="banana_navelrings"
+                      />
+                      <h4 class="goods-title">
+                        Сережки банани для первинного проколу пупка
+                      </h4>
+                      <p class="price">40 грн.</p>
+                      <p class="aviability aviable">В наявності</p>
+                      <button class="product__btn btn">В корзину</button>
+                    </div>
+                    <div class="goods-info">
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Illum, cum. Dolorem minus aut modi fuga fugit maiores
+                        magni eos quaerat officiis repellendus.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="goods-item" id="goods6">
+                    <div class="info_round">
+                      <ion-icon name="information-circle-outline"></ion-icon>
+                    </div>
+                    <div class="goods-front">
+                      <img
+                        src="img/womens_earrings_1.jpg"
+                        alt="womens_earrings"
+                      />
+                      <h4 class="goods-title">
+                        Жіночі сережки <br />
+                        пусети
+                      </h4>
+                      <p class="price">95 грн.</p>
+                      <p class="aviability aviable">В наявності</p>
+                      <button class="product__btn btn">В корзину</button>
+                    </div>
+                    <div class="goods-info">
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Illum, cum. Dolorem minus aut modi fuga fugit maiores
+                        magni eos quaerat officiis repellendus.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="goods-item" id="goods6">
+                    <div class="info_round">
+                      <ion-icon name="information-circle-outline"></ion-icon>
+                    </div>
+                    <div class="goods-front">
+                      <img
+                        src="img/womens_earrings_2.jpg"
+                        alt="womens_earrings"
+                      />
+                      <h4 class="goods-title">
+                        Жіночі сережки <br />
+                        "Корона"
+                      </h4>
+                      <p class="price">95 грн.</p>
+                      <p class="aviability aviable">В наявності</p>
+                      <button class="product__btn btn">В корзину</button>
+                    </div>
+                    <div class="goods-info">
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Illum, cum. Dolorem minus aut modi fuga fugit maiores
+                        magni eos quaerat officiis repellendus.
+                      </p>
+                    </div>
+                  </div>
+                </section>
+              </div>
+              <div class="tab tab-8">
+                <section class="goods">
+                  <div class="goods-item" id="goods2">
+                    <div class="info_round">
+                      <ion-icon name="information-circle-outline"></ion-icon>
+                    </div>
+                    <div class="goods-front">
+                      <img src="img/kulon.jpg" alt="goods2" />
+                      <h4 class="goods-title">Позолочені ланцюжки з перлами</h4>
+                      <p class="price">25 грн.</p>
+                      <p class="aviability aviable">В наявності</p>
+                      <button class="product__btn btn">В корзину</button>
+                    </div>
+                    <div class="goods-info">
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Illum, cum. Dolorem minus aut modi fuga fugit maiores
+                        magni eos quaerat officiis repellendus.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="goods-item" id="goods2">
+                    <div class="info_round">
+                      <ion-icon name="information-circle-outline"></ion-icon>
+                    </div>
+                    <div class="goods-front">
+                      <img src="img/manny_pack_1.jpg" alt="manny_pack" />
+                      <h4 class="goods-title">
+                        Бананка з голографічним ефектом (срібна)
+                      </h4>
+                      <p class="price">180 грн.</p>
+                      <p class="aviability aviable">В наявності</p>
+                      <button class="product__btn btn">В корзину</button>
+                    </div>
+                    <div class="goods-info">
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Illum, cum. Dolorem minus aut modi fuga fugit maiores
+                        magni eos quaerat officiis repellendus.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="goods-item" id="goods2">
+                    <div class="info_round">
+                      <ion-icon name="information-circle-outline"></ion-icon>
+                    </div>
+                    <div class="goods-front">
+                      <img src="img/manny_pack_2.jpg" alt="manny_pack" />
+                      <h4 class="goods-title">
+                        Бананка з голографічним ефектом (рожева)
+                      </h4>
+                      <p class="price">180 грн.</p>
+                      <p class="aviability aviable">В наявності</p>
+                      <button class="product__btn btn">В корзину</button>
+                    </div>
+                    <div class="goods-info">
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Illum, cum. Dolorem minus aut modi fuga fugit maiores
+                        magni eos quaerat officiis repellendus.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="goods-item" id="goods2">
+                    <div class="info_round">
+                      <ion-icon name="information-circle-outline"></ion-icon>
+                    </div>
+                    <div class="goods-front">
+                      <img src="img/manny_pack_3.jpg" alt="manny_pack" />
+                      <h4 class="goods-title">
+                        Бананка з голографічним ефектом (синя)
+                      </h4>
+                      <p class="price">180 грн.</p>
+                      <p class="aviability aviable">В наявності</p>
+                      <button class="product__btn btn">В корзину</button>
+                    </div>
+                    <div class="goods-info">
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Illum, cum. Dolorem minus aut modi fuga fugit maiores
+                        magni eos quaerat officiis repellendus.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="goods-item" id="goods2">
+                    <div class="info_round">
+                      <ion-icon name="information-circle-outline"></ion-icon>
+                    </div>
+                    <div class="goods-front">
+                      <img src="img/manny_pack_4.jpg" alt="manny_pack" />
+                      <h4 class="goods-title">
+                        Бананка з голографічним ефектом (фіолетова)
+                      </h4>
+                      <p class="price">180 грн.</p>
+                      <p class="aviability aviable">В наявності</p>
+                      <button class="product__btn btn">В корзину</button>
+                    </div>
+                    <div class="goods-info">
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Illum, cum. Dolorem minus aut modi fuga fugit maiores
+                        magni eos quaerat officiis repellendus.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="goods-item" id="goods2">
+                    <div class="info_round">
+                      <ion-icon name="information-circle-outline"></ion-icon>
+                    </div>
+                    <div class="goods-front">
+                      <img src="img/gift_boxes_1.jpg" alt="gift_boxes" />
+                      <h4 class="goods-title">
+                        Коробочки для сережок/кулонів/колечок
+                      </h4>
+                      <p class="price">15 грн.</p>
+                      <p class="aviability aviable">В наявності</p>
+                      <button class="product__btn btn">В корзину</button>
+                    </div>
+                    <div class="goods-info">
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Illum, cum. Dolorem minus aut modi fuga fugit maiores
+                        magni eos quaerat officiis repellendus.
+                      </p>
+                    </div>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <ion-icon name="planet" id="services" class="planet"></ion-icon>
+    <section class="services-box">
+      <div class="wrapper-services">
+        <div class="services services1">
+          <div class="delivery-box">
+            <ion-icon class="delivery" name="cube"></ion-icon>
+            <div class="information">
+              <h4>Безкоштовна доставка</h4>
+              <p>
+                На замовлення від 600 грн – безкоштовна доставка по Україні.
+                Відправка замовлень від 3-х до 5 робочих днів
+              </p>
+            </div>
+          </div>
+          <div class="triangle triangle1"></div>
+        </div>
+        <div class="services services2">
+          <div class="pricetags">
+            <ion-icon name="pricetags"></ion-icon>
+            <div class="information">
+              <h4>Акції та знижки</h4>
+              <p>
+                На сайті діють акції та знижки на всі категорії косметики.
+                Завжди знижка для постійних клієнтів.
+              </p>
+            </div>
+          </div>
+          <div class="triangle triangle2"></div>
+        </div>
+        <div class="services services3">
+          <div class="interface">
+            <ion-icon name="tablet-landscape"></ion-icon>
+            <div class="information">
+              <h4>Зручний інтерфейс</h4>
+              <p>
+                Зручний інтерфейс сайту прекрасно пристосований для перегляду з
+                будь-якого пристрою.
+              </p>
+            </div>
+          </div>
+          <div class="triangle triangle3"></div>
+        </div>
+        <div class="services services4">
+          <div class="chatSupport">
+            <ion-icon name="chatbubbles"></ion-icon>
+            <div class="information">
+              <h4>Онлайн підтримка</h4>
+              <p>
+                Ми завжди з радістю відповімо на ваші запитання, а також надамо
+                консультації по вибору товарів в режимі онлайн.
+              </p>
+            </div>
+          </div>
+          <div class="triangle triangle4"></div>
+        </div>
+      </div>
+    </section>
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="sec about-us" id="about-us">
+          <h3>Про нас:</h3>
+          <p>
+            OlkaShop - це інтернет-магазин косметики та засобів для догляду. Ми
+            щодня вдосконалюємо наш сервіс, щоб зробити вас щасливішими!
+          </p>
+          <ul class="socials">
+            <li>
+              <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fa fa-telegram" aria-hidden="true"></i></a>
+            </li>
+          </ul>
+        </div>
+        <div class="sec footer-contacts" id="contacts">
+          <h3>Контакти:</h3>
+          <ul class="info">
+            <li>
+              <span
+                ><i class="fa fa-calendar-check-o" aria-hidden="true"></i
+              ></span>
+              <span
+                >Пн-Пт - 9:00 - 20:00<br />
+                Сб-Нд - 11:00 - 19:00</span
+              >
+            </li>
+            <li>
+              <span><i class="fa fa-phone" aria-hidden="true"></i></span>
+              <p>
+                <a href="tel:+380971135211">+380971135211</a><br />
+                <a href="tel:+380971135211">+380971135211</a>
+              </p>
+            </li>
+            <li>
+              <span><i class="fa fa-envelope" aria-hidden="true"></i></span>
+              <p>
+                <a href="mailto:olkafedoriv@gmail.com">olkafedoriv@gmail.com</a>
+              </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>© OlkaShop 2024</p>
+        <!-- <span
+          >powered by
+          <a href="https://github.com/enootegg" target="_blank"
+            >enootegg</a
+          ></span -->
+        >
+      </div>
+    </footer>
+    <div class="scroll-top" id="scroll-top">
+      <a href="#main"><ion-icon class="rocket" name="rocket"></ion-icon></a>
+    </div>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    <script src="script.js"></script>
+    <script src="simplebar.js"></script>
+    <script src="modal/modal.js"></script>
+    <script src="cart.js"></script>
+  </body>
+</html>
